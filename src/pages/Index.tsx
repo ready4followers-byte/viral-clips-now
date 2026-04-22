@@ -4,17 +4,11 @@ import { Button } from "@/components/ui/button";
 import clip1 from "@/assets/clip-1.jpg";
 import clip2 from "@/assets/clip-2.jpg";
 import clip3 from "@/assets/clip-3.jpg";
-import clip4 from "@/assets/clip-4.jpg";
-import clip5 from "@/assets/clip-5.jpg";
-import clip6 from "@/assets/clip-6.jpg";
 
 const clips = [
   { thumbnail: clip1, title: "Insane 1v5 clutch", metric: "320K", metricLabel: "views" },
   { thumbnail: clip2, title: "He didn't see this coming", metric: "120K", metricLabel: "views" },
   { thumbnail: clip3, title: "Funniest reaction of the week", metric: "+3K", metricLabel: "followers" },
-  { thumbnail: clip4, title: "World record run, edited tight", metric: "210K", metricLabel: "views" },
-  { thumbnail: clip5, title: "Build that broke the internet", metric: "85K", metricLabel: "views" },
-  { thumbnail: clip6, title: "Clutch moment, perfect cut", metric: "+1.8K", metricLabel: "followers" },
 ];
 
 const Index = () => {
@@ -81,7 +75,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-5">
           {clips.map((c) => (
             <ClipCard key={c.title} {...c} />
           ))}
