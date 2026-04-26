@@ -2,7 +2,7 @@ const creators = [
   {
     name: "AlarmingAmber",
     handle: "@alarmingamber",
-    image: "/src/assets/creators/01_AlarmingAmber_TikTok.jpg",
+    image: "/creators/01_AlarmingAmber_TikTok.jpg",
     platform: "TikTok",
     metric: "1M Followers",
     url: "https://www.tiktok.com/@alarmingamber"
@@ -10,7 +10,7 @@ const creators = [
   {
     name: "PERF",
     handle: "@PERF88",
-    image: "/src/assets/creators/02_PERF_YouTube.jpg",
+    image: "/creators/02_PERF_YouTube.jpg",
     platform: "YouTube",
     metric: "Shorts Creator",
     url: "https://www.youtube.com/@PERF88/shorts"
@@ -18,7 +18,7 @@ const creators = [
   {
     name: "HitboTC",
     handle: "@HitboTC",
-    image: "/src/assets/creators/03_HitboTC_YouTube.jpg",
+    image: "/creators/03_HitboTC_YouTube.jpg",
     platform: "YouTube",
     metric: "Variety Streamer",
     url: "https://www.youtube.com/@HitboTC/shorts"
@@ -26,7 +26,7 @@ const creators = [
   {
     name: "Myelin Games",
     handle: "@MyelinGames",
-    image: "/src/assets/creators/04_MyelinGames_YouTube.jpg",
+    image: "/creators/04_MyelinGames_YouTube.jpg",
     platform: "YouTube",
     metric: "Aussie Creator",
     url: "https://www.youtube.com/@MyelinGames/featured"
@@ -34,7 +34,7 @@ const creators = [
   {
     name: "sacred_toao",
     handle: "sacred_toao",
-    image: "/src/assets/creators/05_sacred_toao_Twitch.png",
+    image: "/creators/05_sacred_toao_Twitch.png",
     platform: "Twitch",
     metric: "Live Everyday",
     url: "https://www.twitch.tv/sacred_toao/"
@@ -42,7 +42,7 @@ const creators = [
   {
     name: "GirlyBella",
     handle: "girlybella",
-    image: "/src/assets/creators/06_GirlyBella_Twitch.png",
+    image: "/creators/06_GirlyBella_Twitch.png",
     platform: "Twitch",
     metric: "Pro Player",
     url: "https://www.twitch.tv/girlybella"
@@ -50,7 +50,7 @@ const creators = [
   {
     name: "SnowyFPS",
     handle: "snowyfps",
-    image: "/src/assets/creators/07_SnowyFPS_Twitch.png",
+    image: "/creators/07_SnowyFPS_Twitch.png",
     platform: "Twitch",
     metric: "FPS Pro",
     url: "https://www.twitch.tv/snowyfps"
@@ -58,7 +58,7 @@ const creators = [
   {
     name: "ChikenAU",
     handle: "chikenau",
-    image: "/src/assets/creators/08_ChikenAU_Twitch.png",
+    image: "/creators/08_ChikenAU_Twitch.png",
     platform: "Twitch",
     metric: "FPS Wizard",
     url: "https://www.twitch.tv/chikenau"
