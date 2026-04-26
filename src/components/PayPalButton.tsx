@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 
 const N8N_WEBHOOK = "https://n8n.srv1269197.hstgr.cloud/webhook/paypal-hichamclips";
-const PLAN_NAME = "Monthly Short-form Editing Plan";
-const PLAN_ID = "P-4HA70235CK889102BNHXGEKQ";
 const CLIENT_ID = "AYzmQMN-n1eeYlCCI_Efimk9Ti6UE8APgKZ67MmpBTo6vjG80glMRdW6MjxLiqNE7F1ZJ0qwiZROLGBo";
 
 declare global {
@@ -11,7 +9,13 @@ declare global {
   }
 }
 
-const PayPalButton = () => {
+interface Props {
+  planId: string;
+  planName: string;
+  amount: string;
+}
+
+const PayPalButton = ({ planId, planName, amount }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const rendered = useRef(false);
 
@@ -42,13 +46,14 @@ const PayPalButton = () => {
           label: "subscribe",
         },
         createSubscription: (_data: any, actions: any) => {
-          return actions.subscription.create({ plan_id: PLAN_ID });
+          return actions.subscription.create({ plan_id: planId });
         },
         onApprove: async (data: any) => {
           const payload = {
             subscriptionID: data.subscriptionID,
-            planId: PLAN_ID,
-            planName: PLAN_NAME,
+            planId: planId,
+            planName: planName,
+            amount: amount,
             email: data.payer?.email_address || "",
             name: data.payer?.name
               ? `${data.payer.name.given_name || ""} ${data.payer.name.surname || ""}`.trim()

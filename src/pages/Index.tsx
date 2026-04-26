@@ -175,14 +175,48 @@ const Index = () => {
                 One subscription. Consistent clips.
               </h2>
             </div>
-            <div className="mx-auto max-w-sm">
-              <div className="rounded-3xl border border-primary ring-1 ring-primary bg-card/50 p-8 backdrop-blur shadow-card-dark">
-                <p className="text-sm font-semibold uppercase tracking-wider text-primary">Monthly Plan</p>
+            <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
+
+              {/* $150 Plan */}
+              <div className="rounded-3xl border border-border bg-card/50 p-8 backdrop-blur shadow-card-dark flex flex-col">
+                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Starter Plan</p>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-5xl font-bold">$150</span>
+                  <span className="text-muted-foreground text-sm">/ month</span>
+                </div>
+                <ul className="mt-8 space-y-3 flex-1">
+                  {[
+                    "One active request at a time",
+                    "48-72h delivery",
+                    "Unlimited requests",
+                    "Pause anytime",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-sm">
+                      <CheckCircle className="h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  <PayPalButton
+                    planId="P-2B857842VL922020CNHXHFPY"
+                    planName="Starter Short-form Editing Plan"
+                    amount="$150/month"
+                  />
+                </div>
+              </div>
+
+              {/* $300 Plan */}
+              <div className="rounded-3xl border border-primary ring-1 ring-primary bg-card/50 p-8 backdrop-blur shadow-card-dark flex flex-col relative">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-primary-foreground whitespace-nowrap">
+                  Most Popular
+                </div>
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary">Pro Plan</p>
                 <div className="mt-4 flex items-baseline gap-1">
                   <span className="text-5xl font-bold">$300</span>
                   <span className="text-muted-foreground text-sm">/ month</span>
                 </div>
-                <ul className="mt-8 space-y-3">
+                <ul className="mt-8 space-y-3 flex-1">
                   {[
                     "One active request at a time",
                     "24-48h delivery",
@@ -196,9 +230,14 @@ const Index = () => {
                   ))}
                 </ul>
                 <div className="mt-8">
-                  <PayPalButton />
+                  <PayPalButton
+                    planId="P-4HA70235CK889102BNHXGEKQ"
+                    planName="Monthly Short-form Editing Plan"
+                    amount="$300/month"
+                  />
                 </div>
               </div>
+
             </div>
           </div>
         </section>
