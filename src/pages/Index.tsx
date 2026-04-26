@@ -2,6 +2,7 @@ import { ArrowRight, Mail, CheckCircle, Pause, Shield, Clock, LayoutGrid, Star, 
 import ClipCard from "@/components/ClipCard";
 import { Button } from "@/components/ui/button";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import PayPalButton from "@/components/PayPalButton";
 import { toast } from "sonner";
 
 const clips = [
@@ -194,11 +195,9 @@ const Index = () => {
                     </li>
                   ))}
                 </ul>
-                <Button asChild className="mt-8 w-full h-12 rounded-full font-bold text-base shadow-cta">
-                  <a href="https://www.paypal.com/ncp/payment/DJDET5A6ETN4A" target="_blank" rel="noopener noreferrer">
-                    Join today <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
+                <div className="mt-8">
+                  <PayPalButton />
+                </div>
               </div>
             </div>
           </div>
@@ -232,7 +231,7 @@ const Index = () => {
             </h2>
             <div className="mt-8">
               <Button asChild size="lg" className="h-12 rounded-full px-10 text-base font-bold shadow-cta">
-                <a href="https://www.paypal.com/ncp/payment/DJDET5A6ETN4A" target="_blank" rel="noopener noreferrer">
+                <a href="#pricing">
                   Get started <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
