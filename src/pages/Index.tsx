@@ -175,7 +175,36 @@ const Index = () => {
                 One subscription. Consistent clips.
               </h2>
             </div>
-            <div className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2">
+            <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
+
+              {/* $15 Trial */}
+              <div className="rounded-3xl border border-border bg-card/50 p-8 backdrop-blur shadow-card-dark flex flex-col">
+                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Trial Clip</p>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-5xl font-bold">$15</span>
+                  <span className="text-muted-foreground text-sm">one-time</span>
+                </div>
+                <ul className="mt-8 space-y-3 flex-1">
+                  {[
+                    "1 fully edited clip",
+                    "48-72h delivery",
+                    "No commitment",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-sm">
+                      <CheckCircle className="h-4 w-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="https://www.paypal.com/ncp/payment/98LUGPDDM555A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 w-full h-12 rounded-full font-bold text-sm border border-border bg-card hover:border-primary/60 transition-colors flex items-center justify-center"
+                >
+                  Try it out
+                </a>
+              </div>
 
               {/* $150 Plan */}
               <div className="rounded-3xl border border-border bg-card/50 p-8 backdrop-blur shadow-card-dark flex flex-col">
