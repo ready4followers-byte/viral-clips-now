@@ -187,7 +187,7 @@ const Index = () => {
                 <ul className="mt-8 space-y-3 flex-1">
                   {[
                     "1 fully edited clip",
-                    "48-72h delivery",
+                    "24-48h delivery",
                     "No commitment",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-sm">
