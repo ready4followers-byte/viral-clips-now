@@ -8,9 +8,10 @@ interface ClipCardProps {
   metric: string;
   metricLabel: string;
   videoUrl?: string;
+  variant?: "short" | "long";
 }
 
-const ClipCard = ({ thumbnail, title, metric, metricLabel, videoUrl }: ClipCardProps) => {
+const ClipCard = ({ thumbnail, title, metric, metricLabel, videoUrl, variant = "short" }: ClipCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const isRawVideo = videoUrl?.endsWith(".mp4") || videoUrl?.includes("dl=1") || videoUrl?.includes("/videos/");
 
@@ -25,7 +26,7 @@ const ClipCard = ({ thumbnail, title, metric, metricLabel, videoUrl }: ClipCardP
     <>
       <div
         onClick={handleClick}
-        className="group relative block aspect-[9/16] cursor-pointer overflow-hidden rounded-2xl bg-card shadow-card-dark ring-1 ring-border transition hover:ring-primary/60"
+        className={`group relative block ${variant === "long" ? "aspect-video" : "aspect-[9/16]"} cursor-pointer overflow-hidden rounded-2xl bg-card shadow-card-dark ring-1 ring-border transition hover:ring-primary/60`}
       >
         {isRawVideo ? (
           <video
@@ -83,6 +84,7 @@ const ClipCard = ({ thumbnail, title, metric, metricLabel, videoUrl }: ClipCardP
           isOpen={isOpen}
           onOpenChange={setIsOpen}
           videoUrl={videoUrl}
+          variant={variant}
         />
       )}
     </>

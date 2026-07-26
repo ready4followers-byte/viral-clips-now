@@ -5,9 +5,10 @@ interface VideoModalProps {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
   videoUrl: string;
+  variant?: "short" | "long";
 }
 
-const VideoModal = ({ isOpen, onOpenChange, videoUrl }: VideoModalProps) => {
+const VideoModal = ({ isOpen, onOpenChange, videoUrl, variant = "short" }: VideoModalProps) => {
   const getEmbedUrl = (url: string) => {
     let videoId = "";
     if (url.includes("youtube.com/shorts/")) {
@@ -31,8 +32,8 @@ const VideoModal = ({ isOpen, onOpenChange, videoUrl }: VideoModalProps) => {
     <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm animate-in fade-in duration-300" />
-        <Dialog.Content className="fixed left-[50%] top-[50%] z-50 grid w-full max-w-[350px] md:max-w-md translate-x-[-50%] translate-y-[-50%] gap-4 p-4 shadow-lg duration-200 animate-in fade-in zoom-in-95 sm:rounded-lg">
-          <div className="relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-card shadow-card-dark ring-1 ring-border">
+        <Dialog.Content className={`fixed left-[50%] top-[50%] z-50 grid w-full ${variant === "long" ? "max-w-2xl lg:max-w-3xl" : "max-w-[350px] md:max-w-md"} translate-x-[-50%] translate-y-[-50%] gap-4 p-4 shadow-lg duration-200 animate-in fade-in zoom-in-95 sm:rounded-lg`}>
+          <div className={`relative ${variant === "long" ? "aspect-video" : "aspect-[9/16]"} w-full overflow-hidden rounded-xl bg-card shadow-card-dark ring-1 ring-border`}>
             {isYouTube ? (
               <iframe
                 src={embedUrl}

@@ -1,10 +1,30 @@
-import { ArrowRight, Mail, CheckCircle, Pause, Shield, Clock, LayoutGrid, Star, Zap, Lock } from "lucide-react";
+import { ArrowRight, Mail, Clock, LayoutGrid, Star, Zap, Lock } from "lucide-react";
 import ClipCard from "@/components/ClipCard";
 import { Button } from "@/components/ui/button";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import PayPalButton from "@/components/PayPalButton";
+import CreatorsMarquee from "@/components/CreatorsMarquee";
+import ContactForm from "@/components/ContactForm";
 import { toast } from "sonner";
 
+// Long-form: full edited YouTube videos (16:9)
+const longform = [
+  {
+    thumbnail: "https://img.youtube.com/vi/vKls_0DD23U/maxresdefault.jpg",
+    title: "Full edited YouTube video",
+    metric: "Long-form",
+    metricLabel: "YouTube",
+    videoUrl: "https://youtu.be/vKls_0DD23U",
+  },
+  {
+    thumbnail: "https://img.youtube.com/vi/mqJCmUFJPMU/hqdefault.jpg",
+    title: "Full edited YouTube video",
+    metric: "Long-form",
+    metricLabel: "YouTube",
+    videoUrl: "https://youtu.be/mqJCmUFJPMU",
+  },
+];
+
+// Short-form: shorts / reels / tiktoks (9:16)
 const clips = [
   {
     thumbnail: "https://img.youtube.com/vi/NrfE6ThDXJk/maxresdefault.jpg",
@@ -14,17 +34,10 @@ const clips = [
     videoUrl: "https://www.youtube.com/shorts/NrfE6ThDXJk"
   },
   {
-    thumbnail: "https://img.youtube.com/vi/vGOeYQfi8SM/maxresdefault.jpg",
+    thumbnail: "https://img.youtube.com/vi/wx_PBL1Uy4U/maxresdefault.jpg",
     title: "Perf",
     metric: "288K",
     metricLabel: "Perf",
-    videoUrl: "https://www.youtube.com/shorts/vGOeYQfi8SM"
-  },
-  {
-    thumbnail: "https://img.youtube.com/vi/wx_PBL1Uy4U/maxresdefault.jpg",
-    title: "Mylien",
-    metric: "171K",
-    metricLabel: "Mylien",
     videoUrl: "https://www.youtube.com/shorts/wx_PBL1Uy4U"
   },
   {
@@ -38,19 +51,16 @@ const clips = [
 
 const benefits = [
   { icon: LayoutGrid, title: "Private Discord workspace" },
-  { icon: Shield, title: "Fixed monthly price" },
   { icon: Clock, title: "24-48h delivery" },
-  { icon: Zap, title: "High-retention clips" },
-  { icon: Pause, title: "Pause anytime" },
-  { icon: Star, title: "Made for your content" },
+  { icon: Zap, title: "More content = faster growth" },
+  { icon: Star, title: "Long & short-form covered" },
 ];
 
 const faqs = [
   { q: "How long until I get my clips?", a: "Within 48 hours on average." },
   { q: "Do I need to send you anything?", a: "No. We go through your streams and find the best moments. Share timestamps if you want." },
   { q: "What if I don't like the edit?", a: "Tell us and we'll fix it. We adapt to your style." },
-  { q: "Which platforms do you edit for?", a: "TikTok, YouTube Shorts, Instagram Reels." },
-  { q: "Can I pause my subscription?", a: "Yes. Pause anytime, no questions asked." },
+  { q: "What do you edit?", a: "Both: full edited YouTube videos (long-form) and shorts for YouTube Shorts, Reels and TikTok." },
   { q: "What happens after I pay?", a: "You get a private Discord channel. Share your stream, we get to work." },
   { q: "Is my membership private?", a: "Completely. Only you and I have access to your channel. Nobody else can see you joined or anything we discuss." },
 ];
@@ -69,11 +79,10 @@ const Index = () => {
           <div className="hidden items-center gap-6 md:flex">
             <a href="#how-it-works" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">How it works</a>
             <a href="#work" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Work</a>
-            <a href="#pricing" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
             <a href="#faq" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">FAQ</a>
           </div>
           <Button size="sm" className="rounded-full px-5 text-sm font-bold shadow-cta" asChild>
-            <a href="#pricing">Get started</a>
+            <a href="#contact">Get started</a>
           </Button>
         </nav>
       </header>
@@ -82,38 +91,60 @@ const Index = () => {
 
         {/* 1. HERO */}
         <section className="container mx-auto px-4 py-16 text-center md:py-24">
-          <p className="mb-4 text-xs font-semibold text-muted-foreground tracking-widest uppercase">
-            Simple editing subscription for creators
-          </p>
           <h1 className="mx-auto max-w-2xl font-display text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl md:text-7xl">
-            Short-form clips<br />for streamers
+            Long & short-form<br />growth content
           </h1>
           <p className="mx-auto mt-5 max-w-md text-base text-muted-foreground md:text-lg">
-            Consistent clips delivered every 24-48 hours
+            Full edited YouTube videos and shorts from your streams, delivered every 24-48 hours
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild size="lg" className="w-full sm:w-auto h-12 rounded-full px-8 text-base font-bold shadow-cta">
-              <a href="#pricing">Start today <ArrowRight className="ml-2 h-4 w-4" /></a>
+              <a href="#contact">Start today <ArrowRight className="ml-2 h-4 w-4" /></a>
             </Button>
             <Button variant="outline" size="lg" className="w-full sm:w-auto h-12 rounded-full px-8 text-base font-bold" asChild>
-              <a href="https://discord.gg/NZe7EznF5M" target="_blank" rel="noopener noreferrer">Join HichamClips</a>
+              <a href="#contact">Contact HichamClips</a>
             </Button>
           </div>
           <div className="mt-4">
-            <a href="#pricing" className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors">
-              See pricing
+            <a href="#work" className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors">
+              See our work
             </a>
           </div>
         </section>
 
-        {/* 2. SOCIAL PROOF - clips only here */}
+        {/* CREATORS MARQUEE */}
+        <CreatorsMarquee />
+
+        {/* 2. SOCIAL PROOF - work */}
         <section id="work" className="border-t border-border bg-card/20 py-12 md:py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-              {clips.map((clip, i) => (
-                <ClipCard key={i} {...clip} />
-              ))}
+          <div className="container mx-auto px-4 space-y-12">
+
+            {/* Long-form */}
+            <div>
+              <div className="mb-5 flex items-baseline justify-between">
+                <h3 className="font-display text-xl font-bold sm:text-2xl">Long-form</h3>
+                <span className="text-xs font-medium text-muted-foreground">Full edited YouTube videos</span>
+              </div>
+              <div className="grid grid-cols-1 gap-3 sm:gap-5 md:grid-cols-2">
+                {longform.map((v, i) => (
+                  <ClipCard key={i} variant="long" {...v} />
+                ))}
+              </div>
             </div>
+
+            {/* Short-form */}
+            <div>
+              <div className="mb-5 flex items-baseline justify-between">
+                <h3 className="font-display text-xl font-bold sm:text-2xl">Short-form</h3>
+                <span className="text-xs font-medium text-muted-foreground">Shorts · Reels · TikTok</span>
+              </div>
+              <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3">
+                {clips.map((clip, i) => (
+                  <ClipCard key={i} {...clip} />
+                ))}
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -126,9 +157,9 @@ const Index = () => {
           </div>
           <div className="mx-auto max-w-2xl space-y-3">
             {[
-              { n: "1", title: "Subscribe", desc: "Subscribe to a plan and start." },
+              { n: "1", title: "Get in touch", desc: "Message us on Discord or email." },
               { n: "2", title: "Send content", desc: "Share your stream or VOD." },
-              { n: "3", title: "Receive clips", desc: "Get your clip in 24-48 hours." },
+              { n: "3", title: "Receive videos", desc: "Long-form + shorts in 24-48 hours." },
             ].map((step) => (
               <div key={step.n} className="flex items-center gap-6 rounded-2xl border border-border bg-card/40 px-7 py-5">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-sm font-bold text-primary">
@@ -151,10 +182,10 @@ const Index = () => {
                 Better than freelancers.<br />Simpler than agencies.
               </h2>
             </div>
-            <div className="mx-auto max-w-3xl grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto max-w-2xl grid gap-3 sm:grid-cols-2">
               {benefits.map((b, i) => (
-                <div key={i} className="flex items-center gap-4 rounded-2xl border border-border bg-card/40 px-5 py-4">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                <div key={i} className="flex items-center gap-4 rounded-2xl border border-border bg-card/40 px-5 py-5">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
                     <b.icon className="h-4 w-4" />
                   </div>
                   <span className="text-sm font-semibold">{b.title}</span>
@@ -166,110 +197,6 @@ const Index = () => {
 
         {/* 5. TESTIMONIALS */}
         <div id="feedback"><TestimonialsSection /></div>
-
-        {/* 7. PRICING */}
-        <section id="pricing" className="border-t border-border bg-card/20 py-14 md:py-20">
-          <div className="container mx-auto px-4">
-            <div className="mb-10 text-center">
-              <h2 className="font-display text-3xl font-bold sm:text-5xl">
-                One subscription. Consistent clips.
-              </h2>
-            </div>
-            <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-3">
-
-              {/* $15 Trial */}
-              <div className="rounded-3xl border border-border bg-card/50 p-8 backdrop-blur shadow-card-dark flex flex-col">
-                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Trial Clip</p>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-5xl font-bold">$15</span>
-                  <span className="text-muted-foreground text-sm">one-time</span>
-                </div>
-                <ul className="mt-8 space-y-3 flex-1">
-                  {[
-                    "1 fully edited clip",
-                    "24-48h delivery",
-                    "No commitment",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm">
-                      <CheckCircle className="h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="https://www.paypal.com/ncp/payment/98LUGPDDM555A"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 w-full h-12 rounded-full font-bold text-sm border border-border bg-card hover:border-primary/60 transition-colors flex items-center justify-center"
-                >
-                  Try it out
-                </a>
-              </div>
-
-              {/* $150 Plan */}
-              <div className="rounded-3xl border border-border bg-card/50 p-8 backdrop-blur shadow-card-dark flex flex-col">
-                <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Starter Plan</p>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-5xl font-bold">$150</span>
-                  <span className="text-muted-foreground text-sm">/ month</span>
-                </div>
-                <ul className="mt-8 space-y-3 flex-1">
-                  {[
-                    "One active request at a time",
-                    "48-72h delivery",
-                    "Unlimited requests",
-                    "Pause anytime",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm">
-                      <CheckCircle className="h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8">
-                  <PayPalButton
-                    planId="P-2B857842VL922020CNHXHFPY"
-                    planName="Starter Short-form Editing Plan"
-                    amount="$150/month"
-                  />
-                </div>
-              </div>
-
-              {/* $300 Plan */}
-              <div className="rounded-3xl border border-primary ring-1 ring-primary bg-card/50 p-8 backdrop-blur shadow-card-dark flex flex-col relative">
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-primary-foreground whitespace-nowrap">
-                  Most Popular
-                </div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-primary">Pro Plan</p>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-5xl font-bold">$300</span>
-                  <span className="text-muted-foreground text-sm">/ month</span>
-                </div>
-                <ul className="mt-8 space-y-3 flex-1">
-                  {[
-                    "One active request at a time",
-                    "24-48h delivery",
-                    "Unlimited requests",
-                    "Pause anytime",
-                  ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-sm">
-                      <CheckCircle className="h-4 w-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-8">
-                  <PayPalButton
-                    planId="P-4HA70235CK889102BNHXGEKQ"
-                    planName="Monthly Short-form Editing Plan"
-                    amount="$300/month"
-                  />
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
 
         {/* 8. FAQ */}
         <section id="faq" className="container mx-auto px-4 py-14 md:py-20">
@@ -297,14 +224,11 @@ const Index = () => {
             <h2 className="mx-auto max-w-xl font-display text-4xl font-bold leading-tight sm:text-5xl">
               Start posting consistently<br />without editing yourself
             </h2>
-            <div className="mt-8">
-              <Button asChild size="lg" className="h-12 rounded-full px-10 text-base font-bold shadow-cta">
-                <a href="#pricing">
-                  Get started <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
+            <div className="mt-10">
+              <ContactForm />
             </div>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <p className="mt-10 text-sm text-muted-foreground">Or reach us directly</p>
+            <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href="https://discord.gg/NZe7EznF5M"
                 target="_blank"
