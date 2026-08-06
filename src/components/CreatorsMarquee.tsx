@@ -3,6 +3,7 @@ const creators = [
   { name: "MyelinGames", followers: "283K", img: "/creators/myelingames.png", link: "https://www.youtube.com/@MyelinGames" },
   { name: "AlarmingAmber", followers: "131K", img: "/creators/alarmingamber.png", link: "https://www.twitch.tv/alarmingamber" },
   { name: "GirlyBella", followers: "106K", img: "/creators/girlybella.png", link: "https://www.twitch.tv/girlybella" },
+  { name: "MiaMakesMusic", followers: "101K", img: "/creators/miamakesmusic.png", link: "https://www.twitch.tv/miamakesmusic" },
   { name: "sacred_toao", followers: "96K", img: "/creators/sacred_toao.png", link: "https://www.twitch.tv/sacred_toao" },
   { name: "PERF", followers: "28K", img: "/creators/perf.png", link: "https://www.youtube.com/@PERF88" },
   { name: "SnowyFPS", followers: "25K", img: "/creators/snowyfps.png", link: "https://www.twitch.tv/SnowyFPS" },

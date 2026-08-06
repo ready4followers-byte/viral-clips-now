@@ -34,11 +34,11 @@ const clips = [
     videoUrl: "https://www.youtube.com/shorts/NrfE6ThDXJk"
   },
   {
-    thumbnail: "https://img.youtube.com/vi/wx_PBL1Uy4U/maxresdefault.jpg",
-    title: "Perf",
-    metric: "288K",
-    metricLabel: "Perf",
-    videoUrl: "https://www.youtube.com/shorts/wx_PBL1Uy4U"
+    thumbnail: "/mia-scaring-thumb.jpg",
+    title: "Scaring a streamer",
+    metric: "Twitch",
+    metricLabel: "MiaMakesMusic",
+    videoUrl: "/videos/mia-scaring-a-streamer.mp4"
   },
   {
     thumbnail: "/dlou-thumb.png",
