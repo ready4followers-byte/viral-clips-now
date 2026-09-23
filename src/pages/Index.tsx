@@ -36,9 +36,16 @@ const clips = [
   {
     thumbnail: "/mia-scaring-thumb.jpg",
     title: "Scaring a streamer",
-    metric: "Twitch",
+    metric: "+500K views",
     metricLabel: "MiaMakesMusic",
     videoUrl: "/videos/mia-scaring-a-streamer.mp4"
+  },
+  {
+    thumbnail: "/alarmingamber-thumb.jpg",
+    title: "UR SO OLD OMG",
+    metric: "+300K views",
+    metricLabel: "AlarmingAmber",
+    videoUrl: "/videos/alarmingamber-ur-so-old.mp4"
   },
   {
     thumbnail: "/dlou-thumb.png",
